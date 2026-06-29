@@ -1,10 +1,14 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import { Stethoscope, Sparkles, Zap, Scissors, Smile, Baby, Eye, Pill, ArrowRight, Shield, Heart } from "lucide-react"
+import { Stethoscope, Sparkles, Zap, Scissors, Smile, Baby, Eye, Pill, ArrowRight, Shield, Heart, Star } from "lucide-react"
 import Link from "next/link"
 import Image from "@/components/ImageWithSkeleton"
 
-export default function HizmetlerPage() {
+import { getImages } from "@/lib/getImages"
+
+export default async function HizmetlerPage() {
+  const dbImages = await getImages();
+
   const services = [
     {
       slug: "implant-dis-tedavisi",
@@ -13,97 +17,97 @@ export default function HizmetlerPage() {
       details: ["Tek diş eksiklikleri", "Kısmi diş eksiklikleri", "Total diş eksiklikleri", "All-on-4 implant"],
       icon: Stethoscope,
       color: "from-teal-500 to-teal-600",
-      image: "/images/implantdistedavisi.png"
+      image: dbImages.implantdistedavi
     },
     {
       slug: "zirkonyum-kaplama",
       name: "Zirkonyum Kaplama",
       description: "Zirkonyum kaplama, yüksek estetik beklentileri olan bireyler için ideal bir çözüm sunar. Doğal diş görünümü ile uzun ömürlüdür.",
-      details: ["Metal içermez", "Alerjik reaksiyon yapmaz", "Yüksek dayanıklılık", "Doğal görünüm"],
+      details: ["Estetik gülüş tasarımı", "Renk değişimine dirençli", "Doku dostu materyal", "Metal desteksiz"],
       icon: Sparkles,
-      color: "from-amber-500 to-amber-600",
-      image: "/images/zirkonyumkaplama.jpeg"
+      color: "from-sky-500 to-sky-600",
+      image: dbImages.zirkonyumkaplama
     },
     {
       slug: "dis-beyazlatma",
       name: "Diş Beyazlatma",
-      description: "Estetik bir ihtiyaç olan diş beyazlatma işleminde, renk diş yapısına ve rengine göre 4-5 ton açıklık sağlanmaktadır.",
-      details: ["Ofis içi beyazlatma", "Ev tipi beyazlatma", "Kombine tedavi", "Uzun süreli etki"],
+      description: "Zamanla renk değiştiren dişlerinizi güvenle ve etkili bir şekilde beyazlatıyoruz. Daha parlak ve özgüvenli bir gülüş.",
+      details: ["Ofis tipi beyazlatma", "Ev tipi beyazlatma", "Lazerle beyazlatma", "Kalıcı sonuçlar"],
       icon: Zap,
-      color: "from-sky-500 to-sky-600",
-      image: "/images/disbeyazlatma.png"
+      color: "from-indigo-500 to-indigo-600",
+      image: dbImages.disbeyazlatma
     },
     {
       slug: "dis-eti-tedavisi",
       name: "Diş Eti Tedavisi",
-      description: "Beslenme, vitamin eksikliği, yetersiz diş bakımı gibi sebepler ortaya çıkan diş eti hastalığının modern tedavi yöntemleri.",
-      details: ["Diş taşı temizliği", "Diş eti çekilmesi", "Diş eti grafting", "Lazer tedavi"],
+      description: "Sağlıklı dişlerin temeli sağlıklı diş etleridir. Diş eti hastalıklarının erken teşhis ve tedavisi ile diş kayıplarını önlüyoruz.",
+      details: ["Gingivitis tedavisi", "Periodontitis", "Diş taşı temizliği", "Kök yüzeyi düzleştirme"],
       icon: Heart,
       color: "from-rose-500 to-rose-600",
-      image: "/images/disetitedavisi.webp"
+      image: dbImages.disetitedavisi
     },
     {
       slug: "estetik-dis-hekimligi",
       name: "Estetik Diş Hekimliği",
-      description: "Çene, ağız ve diş yapısına göre hastalarda gülümsemelerini güzelleştirecek estetik çalışma yöntemidir.",
-      details: ["Gülüş tasarımı", "Laminate veneer", "Bonding", "Diş eti estetiği"],
-      icon: Smile,
-      color: "from-purple-500 to-purple-600",
-      image: "/images/Estetik-Dis-Hekimligi1.jpg"
+      description: "Gülüşünüzü baştan tasarlıyoruz. Porselen laminalar ve kompozit dolgular ile hayalinizdeki gülüşe kavuşun.",
+      details: ["Porselen lamina", "Kompozit bonding", "Gülüş tasarımı", "Pembe estetik"],
+      icon: Star,
+      color: "from-amber-500 to-amber-600",
+      image: dbImages.estetikdishekimligi
     },
     {
       slug: "agiz-dis-ve-cene-cerrahisi",
-      name: "Ağız, Diş ve Çene Cerrahisi",
-      description: "Ağız ve çene yapısı dahilinde bulunan dişler, dil, yanak, çene kemiği gibi tüm kısımların tedavi alanıdır.",
-      details: ["Gömülü diş çekimi", "Çene cerrahisi", "İmplant cerrahisi", "Kist tümör cerrahisi"],
+      name: "Çene Cerrahisi",
+      description: "Gömülü yirmilik diş çekimi, kist operasyonları ve ileri cerrahi işlemler uzman hekimlerimiz tarafından uygulanır.",
+      details: ["Yirmilik diş çekimi", "Kist operasyonları", "Çene eklemi tedavisi", "Sinüs lifting"],
       icon: Scissors,
-      color: "from-teal-600 to-teal-700",
-      image: "/images/agizdiscenecerrah.png"
+      color: "from-slate-500 to-slate-600",
+      image: dbImages.agizdisvecenecerrahisi
     },
     {
       slug: "ortodonti",
       name: "Ortodonti",
-      description: "Ortodontik tedaviler diş, çene ve ağız yapısına ait bozuklukların tedavi edilmesi için uygulanmaktadır.",
-      details: ["Metal braket", "Şeffaf plak", "Lingual ortodonti", "Yetişkin ortodontisi"],
-      icon: Shield,
-      color: "from-indigo-500 to-indigo-600",
-      image: "/images/ortodonti.jpg"
+      description: "Çapraşık dişlerin ve çene uyumsuzluklarının tel veya şeffaf plaklarla düzeltilmesi.",
+      details: ["Şeffaf plak (Invisalign)", "Metal braketler", "Porselen braketler", "Çocuk ortodontisi"],
+      icon: Smile,
+      color: "from-violet-500 to-violet-600",
+      image: dbImages.ortodonti
     },
     {
       slug: "protezler",
       name: "Protezler",
-      description: "Diş kaybı ve ağız içi dokuların zarar görmesi gibi ağız sağlığını etkileyen durumlarda başvurulan tedavi yöntemidir.",
-      details: ["Hareketli protez", "Sabit protez", "Implant destekli protez", "Tam protez"],
-      icon: Pill,
+      description: "Eksik dişlerin yerini alan, fonksiyon ve estetiği geri kazandıran hareketli veya sabit protez uygulamaları.",
+      details: ["Sabit protezler", "Hareketli protezler", "İmplant üstü protez", "Hassas tutuculu"],
+      icon: Shield,
       color: "from-emerald-500 to-emerald-600",
-      image: "/images/protezdis.webp"
+      image: dbImages.protezler
     },
     {
       slug: "kanal-tedavisi",
       name: "Kanal Tedavisi",
-      description: "Diş sinirlerinde meydana gelen problemlerin ve çevre dokulardaki hasarların düzeltilmesini kapsamaktadır.",
-      details: ["Tek seansta kanal", "Mikroskop destekli", "Rotary sistem", "Re-tedavi"],
+      description: "Çürük veya travma nedeniyle zarar görmüş diş sinirlerinin temizlenerek dişin kurtarılması işlemi.",
+      details: ["Tek köklü diş", "Çok köklü diş", "Kök ucu cerrahisi", "Lazer destekli"],
       icon: Eye,
-      color: "from-orange-500 to-orange-600",
-      image: "/images/kanaltedavisi.webp"
+      color: "from-cyan-500 to-cyan-600",
+      image: dbImages.kanaltedavisi
     },
     {
       slug: "pedodonti",
-      name: "Pedodonti",
-      description: "Bebek ve çocukların ağız, diş ve çene gelişimleri en ince detaylarına kadar takip edilmektedir.",
-      details: ["Flor uygulaması", "Fissür örtücü", "Erken ortodontik müdahale", "Sedasyonlu tedavi"],
+      name: "Pedodonti (Çocuk)",
+      description: "Çocukların süt ve daimi dişlerinin sağlıklı bir şekilde sürmesi ve korunması için özel tedaviler.",
+      details: ["Fissür örtücü", "Flor uygulaması", "Süt dişi dolgusu", "Yer tutucular"],
       icon: Baby,
       color: "from-pink-500 to-pink-600",
-      image: "/images/Pedodonti.png"
+      image: dbImages.pedodonti
     },
     {
       slug: "genel-dis-bakimi",
       name: "Genel Diş Bakımı",
-      description: "Komple ağız ve diş bakımı, yalnızca diş taşı temizliğini değil, genel bir ağız ve diş temizliğini kapsamaktadır.",
-      details: ["Diş taşı temizliği", "Polishing", "Flossing", "Ağız bakımı eğitimi"],
-      icon: Sparkles,
-      color: "from-cyan-500 to-cyan-600",
-      image: "/images/geneldisbakim.webp"
+      description: "Düzenli kontroller ve koruyucu hekimlik uygulamaları ile ağız sağlığınızı sürekli koruyun.",
+      details: ["Rutin kontrol", "Röntgen", "Florür tedavisi", "Ağız hijyeni eğitimi"],
+      icon: Pill,
+      color: "from-blue-500 to-blue-600",
+      image: dbImages.geneldisbakimi
     },
     {
       slug: "agiz-kokusu",
@@ -112,7 +116,7 @@ export default function HizmetlerPage() {
       details: ["Ağız kuruluğu tedavisi", "Diş eti hastalıkları", "Dil temizliği", "Beslenme düzeni"],
       icon: Zap,
       color: "from-lime-500 to-lime-600",
-      image: "/images/agizkokusugiderme.jpg"
+      image: dbImages.agizkokusu
     },
   ]
 
@@ -166,6 +170,7 @@ export default function HizmetlerPage() {
                     src={service.image} 
                     alt={service.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Overlay on hover */}

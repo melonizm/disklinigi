@@ -4,14 +4,18 @@ import { ArrowRight, Shield, Award, Clock, Phone, Mail, MapPin, Star, Users, Hea
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 
-export default function Home() {
+import { getImages } from "@/lib/getImages"
+
+export default async function Home() {
+  const dbImages = await getImages();
+
   const services = [
-    { slug: "implant-dis-tedavisi", name: "İmplant Tedavisi", description: "Tek, kısmi veya total diş eksikliklerinde modern çözümler", icon: Stethoscope, image: "/images/implantdistedavisi.png" },
-    { slug: "zirkonyum-kaplama", name: "Zirkonyum Kaplama", description: "Yüksek estetik beklentileri için ideal çözüm", icon: Sparkles, image: "/images/zirkonyumkaplama.jpeg" },
-    { slug: "dis-beyazlatma", name: "Diş Beyazlatma", description: "Estetik ve parlak gülüşler için profesyonel tedavi", icon: Zap, image: "/images/disbeyazlatma.png" },
-    { slug: "ortodonti", name: "Ortodonti", description: "Diş ve çene yapısı bozukluklarının tedavisi", icon: Smile, image: "/images/ortodonti.jpg" },
-    { slug: "kanal-tedavisi", name: "Kanal Tedavisi", description: "Diş sinir problemlerinin modern tedavi yöntemleri", icon: Eye, image: "/images/kanaltedavisi.webp" },
-    { slug: "pedodonti", name: "Pedodonti", description: "Çocuklar için özel ağız ve diş sağlığı hizmetleri", icon: Baby, image: "/images/Pedodonti.png" },
+    { slug: "implant-dis-tedavisi", name: "İmplant Tedavisi", description: "Tek, kısmi veya total diş eksikliklerinde modern çözümler", icon: Stethoscope, image: dbImages.implantdistedavi },
+    { slug: "zirkonyum-kaplama", name: "Zirkonyum Kaplama", description: "Yüksek estetik beklentileri için ideal çözüm", icon: Sparkles, image: dbImages.zirkonyumkaplama },
+    { slug: "dis-beyazlatma", name: "Diş Beyazlatma", description: "Estetik ve parlak gülüşler için profesyonel tedavi", icon: Zap, image: dbImages.disbeyazlatma },
+    { slug: "ortodonti", name: "Ortodonti", description: "Diş ve çene yapısı bozukluklarının tedavisi", icon: Smile, image: dbImages.ortodonti },
+    { slug: "kanal-tedavisi", name: "Kanal Tedavisi", description: "Diş sinir problemlerinin modern tedavi yöntemleri", icon: Eye, image: dbImages.kanaltedavisi },
+    { slug: "pedodonti", name: "Pedodonti", description: "Çocuklar için özel ağız ve diş sağlığı hizmetleri", icon: Baby, image: dbImages.pedodonti },
   ]
 
   const features = [
@@ -117,7 +121,7 @@ export default function Home() {
               <div className="relative">
                 {/* Main glass card */}
                 <div className="glass-card rounded-3xl relative z-10 overflow-hidden shadow-2xl shadow-teal-900/50">
-                  <Image src="/images/dentistvemusterisimutlu.jpg" alt="Mutlu Hasta ve Diş Hekimi" fill className="object-cover opacity-30 mix-blend-overlay" />
+                  <Image src={dbImages.dentistvemusterisimutlu} alt="Mutlu Hasta ve Diş Hekimi" fill sizes="(max-width: 1024px) 100vw, 50vw" priority className="object-cover opacity-30 mix-blend-overlay" />
                   <div className="absolute inset-0 bg-teal-900/40 backdrop-blur-sm"></div>
                   
                   <div className="relative z-10 p-8">
@@ -242,6 +246,7 @@ export default function Home() {
                     src={service.image} 
                     alt={service.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Overlay on hover */}
@@ -320,7 +325,7 @@ export default function Home() {
             <div>
               {/* Clinic image placeholder */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-[500px]">
-                <Image src="/images/klinikfoto1.jpg" alt="Klinik Fotoğrafı" fill className="object-cover" />
+                <Image src={dbImages.klinikfoto1} alt="Klinik Fotoğrafı" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </div>
             <div>

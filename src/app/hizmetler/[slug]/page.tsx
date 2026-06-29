@@ -129,6 +129,8 @@ const servicesData = [
   },
 ]
 
+import { getImages } from "@/lib/getImages"
+
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const service = servicesData.find((s) => s.slug === slug)
@@ -136,6 +138,25 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!service) {
     notFound()
   }
+
+  const dbImages = await getImages()
+  const keyMap: Record<string, string> = {
+    "implant-dis-tedavisi": "implantdistedavi",
+    "zirkonyum-kaplama": "zirkonyumkaplama",
+    "dis-beyazlatma": "disbeyazlatma",
+    "dis-eti-tedavisi": "disetitedavisi",
+    "estetik-dis-hekimligi": "estetikdishekimligi",
+    "agiz-dis-ve-cene-cerrahisi": "agizdisvecenecerrahisi",
+    "ortodonti": "ortodonti",
+    "protezler": "protezler",
+    "kanal-tedavisi": "kanaltedavisi",
+    "pedodonti": "pedodonti",
+    "genel-dis-bakimi": "geneldisbakimi",
+    "agiz-kokusu": "agizkokusu"
+  };
+
+  const dbKey = keyMap[slug];
+  const imageSrc = (dbKey ? dbImages[dbKey] : null);
 
   const Icon = service.icon
 
@@ -189,9 +210,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             {/* Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32 h-[500px]">
               <Image 
-                src={service.image} 
+                src={imageSrc} 
                 alt={service.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
                 className="object-cover"
               />
             </div>

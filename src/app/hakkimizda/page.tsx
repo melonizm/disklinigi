@@ -4,7 +4,10 @@ import { Award, Users, Heart, Target } from "lucide-react"
 import Link from "next/link"
 import Image from "@/components/ImageWithSkeleton"
 
-export default function HakkimizdaPage() {
+import { getImages } from "@/lib/getImages"
+
+export default async function HakkimizdaPage() {
+  const dbImages = await getImages();
   const doctors = [
     {
       name: "Dt. Enis ARDALI",
@@ -107,7 +110,7 @@ export default function HakkimizdaPage() {
             <div>
               {/* Clinic image placeholder */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-96">
-                <Image src="/images/klinikbeklemeodasi.jpg" alt="Klinik Bekleme Odası" fill className="object-cover" />
+                <Image src={dbImages.klinikbeklemeodasi} alt="Klinik Bekleme Odası" fill sizes="(max-width: 1024px) 100vw, 50vw" priority className="object-cover" />
               </div>
             </div>
             <div>

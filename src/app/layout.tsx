@@ -13,10 +13,17 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "DentaClinic - Ağız ve Diş Sağlığı Polikliniği",
-  description: "Modern teknoloji ve uzman kadromuzla ağız ve diş sağlığınız için en iyi hizmeti sunuyoruz. İmplant, ortodonti, estetik diş hekimliği ve daha fazlası.",
-};
+import { getImages } from "@/lib/getImages";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dbImages = await getImages();
+  
+  return {
+    title: "DentaClinic - Ağız ve Diş Sağlığı Polikliniği",
+    description: "Modern teknoloji ve uzman kadromuzla ağız ve diş sağlığınız için en iyi hizmeti sunuyoruz. İmplant, ortodonti, estetik diş hekimliği ve daha fazlası.",
+    icons: dbImages.favicon ? { icon: dbImages.favicon } : undefined,
+  };
+}
 
 export default function RootLayout({
   children,
