@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "@/components/ImageWithSkeleton"
 import { ArrowLeft, CheckCircle2, Stethoscope, Sparkles, Zap, Scissors, Smile, Baby, Eye, Pill, Shield, Heart } from "lucide-react"
 
 // Centralized services data for the dynamic page
@@ -14,7 +15,7 @@ const servicesData = [
     longDescription: "İmplant, eksik olan dişlerin fonksiyon ve estetiğini tekrar sağlamak amacıyla çene kemiğine yerleştirilen ve genellikle titanyumdan yapılan yapay diş kökleridir. Doğal dişe en yakın alternatiftir ve geleneksel köprü ve protezlere göre daha iyi konuşma ve çiğneme fonksiyonu sağlar. Kliniğimizde uygulanan implant tedavileri, yüksek kaliteli materyallerle uzman hekimlerimiz tarafından özenle gerçekleştirilmektedir.",
     icon: Stethoscope,
     color: "from-teal-500 to-teal-600",
-    placeholder: "İmplant tedavisi görseli"
+    image: "/images/implantdistedavisi.png"
   },
   {
     slug: "zirkonyum-kaplama",
@@ -24,7 +25,7 @@ const servicesData = [
     longDescription: "Zirkonyum diş kaplaması, beyaz renkli bir alaşım olan zirkonyum elementinin kullanıldığı metal desteksiz bir kaplama türüdür. Işık geçirgenliğinin yüksek olması sayesinde doğal dişlere en yakın estetik görünümü sağlar. Diş etiyle mükemmel uyum gösterir ve metal destekli porselenlerde görülen diş eti kenarındaki morarma zirkonyum kaplamalarda oluşmaz.",
     icon: Sparkles,
     color: "from-amber-500 to-amber-600",
-    placeholder: "Zirkonyum kaplama görseli"
+    image: "/images/zirkonyumkaplama.jpeg"
   },
   {
     slug: "dis-beyazlatma",
@@ -34,7 +35,7 @@ const servicesData = [
     longDescription: "Diş beyazlatma (Bleaching), dişlerin yapısında (mine ve dentin tabakasında) oluşan renklenmeleri giderme işlemidir. Kliniğimizde uygulanan profesyonel diş beyazlatma yöntemleri ile dişlerinizin rengi güvenli bir şekilde birkaç ton açılabilir. İşlem, dişin yapısına zarar vermeden tamamen güvenli materyallerle gerçekleştirilir.",
     icon: Zap,
     color: "from-sky-500 to-sky-600",
-    placeholder: "Diş beyazlatma görseli"
+    image: "/images/disbeyazlatma.png"
   },
   {
     slug: "dis-eti-tedavisi",
@@ -44,7 +45,7 @@ const servicesData = [
     longDescription: "Periodontoloji, dişleri çevreleyen dokuların ve diş etlerinin sağlığıyla ilgilenen uzmanlık dalıdır. Sağlıklı diş eti açık pembe renkli ve portakal kabuğu görünümündedir. Diş eti kanaması, ağız kokusu, dişlerde sallanma gibi belirtiler diş eti hastalığının habercisi olabilir. Erken teşhis ve düzenli diş taşı temizliği ile diş eti hastalıklarının önüne geçilebilir.",
     icon: Heart,
     color: "from-rose-500 to-rose-600",
-    placeholder: "Diş eti tedavisi görseli"
+    image: "/images/disetitedavisi.webp"
   },
   {
     slug: "estetik-dis-hekimligi",
@@ -54,7 +55,7 @@ const servicesData = [
     longDescription: "Estetik diş hekimliği, kişinin ağız ve diş yapısını yüz hatlarıyla uyumlu hale getirerek en ideal gülüşü tasarlamayı amaçlar. Hollywood smile, laminate veneer (yaprak porselen), bonding uygulamaları ve pembe estetik (diş eti estetiği) gibi çeşitli yöntemler kullanılarak hastalarımızın hayal ettikleri sağlıklı ve güzel gülüşe kavuşmaları sağlanır.",
     icon: Smile,
     color: "from-purple-500 to-purple-600",
-    placeholder: "Estetik diş hekimliği görseli"
+    image: "/images/Estetik-Dis-Hekimligi1.jpg"
   },
   {
     slug: "agiz-dis-ve-cene-cerrahisi",
@@ -64,7 +65,7 @@ const servicesData = [
     longDescription: "Ağız, diş ve çene cerrahisi; ağız içerisindeki tüm yumuşak dokuların (dil, yanak, dudak, tükürük bezleri vb.) ve sert dokuların (dişler, çene kemikleri) her türlü rahatsızlığının teşhis ve cerrahi tedavisi ile ilgilenen bölümdür. 20 yaş dişlerinin çekimi, kist operasyonları ve çene eklemi tedavileri uzman çene cerrahlarımız tarafından yapılmaktadır.",
     icon: Scissors,
     color: "from-teal-600 to-teal-700",
-    placeholder: "Çene cerrahisi görseli"
+    image: "/images/agizdiscenecerrah.png"
   },
   {
     slug: "ortodonti",
@@ -74,7 +75,7 @@ const servicesData = [
     longDescription: "Ortodonti, uyumsuz ve çapraşık dişlerin ve çene yüz anomalilerinin teşhis ve tedavisiyle ilgilenen uzmanlık dalıdır. Sadece estetik değil, aynı zamanda iyi bir çiğneme fonksiyonu ve ağız hijyeni için de önemlidir. Geleneksel tel tedavilerinin yanı sıra, günümüzde görünmez şeffaf plaklar (Invisalign) ile de konforlu ve estetik ortodontik tedaviler mümkündür.",
     icon: Shield,
     color: "from-indigo-500 to-indigo-600",
-    placeholder: "Ortodonti tedavisi görseli"
+    image: "/images/ortodonti.jpg"
   },
   {
     slug: "protezler",
@@ -84,7 +85,7 @@ const servicesData = [
     longDescription: "Protetik diş tedavisi, kaybedilen dişlerin ve ağız içi çevre dokuların fonksiyon, fonasyon (konuşma) ve estetiğini hastaya yeniden kazandırmayı amaçlayan branştır. Sabit protezler (kuron-köprü), hareketli protezler (tam ve bölümlü protezler) ve implant üstü protezler kliniğimizde hastanın ihtiyacına göre kişiye özel olarak tasarlanıp uygulanmaktadır.",
     icon: Pill,
     color: "from-emerald-500 to-emerald-600",
-    placeholder: "Protez tedavisi görseli"
+    image: "/images/protezdis.webp"
   },
   {
     slug: "kanal-tedavisi",
@@ -94,7 +95,7 @@ const servicesData = [
     longDescription: "Endodonti (Kanal Tedavisi), dişin merkezinde bulunan pulpa dokusunun (sinir, kan ve lenf damarlarını içeren doku) hastalıkları ve tedavisi ile ilgilenir. Dişteki enfekte veya ölü pulpa dokusu temizlenerek, kök kanalları şekillendirilir ve sızdırmaz bir şekilde doldurulur. Modern teknoloji ve anestezi yöntemleri sayesinde kanal tedavisi ağrısız ve konforlu bir işlemdir.",
     icon: Eye,
     color: "from-orange-500 to-orange-600",
-    placeholder: "Kanal tedavisi görseli"
+    image: "/images/kanaltedavisi.webp"
   },
   {
     slug: "pedodonti",
@@ -104,7 +105,7 @@ const servicesData = [
     longDescription: "Pedodonti (Çocuk Diş Hekimliği), 0-14 yaş grubu çocukların süt ve daimi dişlerinin sağlıklı olarak korunmasını ve oluşan hastalıkların tedavisini üstlenen bölümdür. Çocukların diş hekimi korkusu oluşmadan, oyun ortamında ve sevgiyle tedavilerini gerçekleştirmek temel amacımızdır. Koruyucu uygulamalarla (flor ve fissür örtücü) çürük oluşumu engellenir.",
     icon: Baby,
     color: "from-pink-500 to-pink-600",
-    placeholder: "Çocuk diş tedavisi görseli"
+    image: "/images/Pedodonti.png"
   },
   {
     slug: "genel-dis-bakimi",
@@ -114,7 +115,7 @@ const servicesData = [
     longDescription: "Genel diş bakımı ve rutin kontroller, ağız sağlığını korumanın en önemli adımıdır. 6 ayda bir yapılan diş taşı temizliği (detertraj) ve cila (polishing) işlemleri ile diş yüzeyindeki lekeler ve plaklar uzaklaştırılır. Erken teşhis edilen çürükler ilerlemeden tedavi edilir ve hastaya doğru ağız bakım eğitimi verilir.",
     icon: Sparkles,
     color: "from-cyan-500 to-cyan-600",
-    placeholder: "Genel diş bakımı görseli"
+    image: "/images/geneldisbakim.webp"
   },
   {
     slug: "agiz-kokusu",
@@ -124,7 +125,7 @@ const servicesData = [
     longDescription: "Ağız kokusu (Halitozis), bireylerin sosyal yaşamını olumsuz etkileyen önemli bir problemdir. Çoğunlukla ağız içi kaynaklı (çürük dişler, diş eti hastalıkları, yetersiz ağız hijyeni, gömülü yirmilik yaş dişleri) olsa da bazen sistemik hastalıkların da habercisi olabilir. Kliniğimizde ağız kokusunun nedeni tespit edilerek nedene yönelik tedavi planlaması yapılır.",
     icon: Zap,
     color: "from-lime-500 to-lime-600",
-    placeholder: "Ağız kokusu tedavisi görseli"
+    image: "/images/agizkokusugiderme.jpg"
   },
 ]
 
@@ -185,17 +186,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
-            {/* Image Placeholder */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32">
-              <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-[500px] flex items-center justify-center">
-                <div className="text-center text-gray-400">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-gray-300 rounded-3xl flex items-center justify-center">
-                    <Icon className="w-10 h-10 text-gray-400" />
-                  </div>
-                  <p className="text-lg font-medium">Bölüm Görseli</p>
-                  <p className="text-sm mt-1">{service.placeholder}</p>
-                </div>
-              </div>
+            {/* Image */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32 h-[500px]">
+              <Image 
+                src={service.image} 
+                alt={service.name}
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Details */}

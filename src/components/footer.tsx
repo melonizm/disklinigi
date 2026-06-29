@@ -14,12 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-gray-900 text-white">
-      {/* Top wave separator */}
-      <div className="absolute -top-px left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
-          <path d="M0 60L48 52.5C96 45 192 30 288 22.5C384 15 480 15 576 20C672 25 768 35 864 37.5C960 40 1056 35 1152 30C1248 25 1344 20 1392 17.5L1440 15V60H1392C1344 60 1248 60 1152 60C1056 60 960 60 864 60C768 60 672 60 576 60C480 60 384 60 288 60C192 60 96 60 48 60H0Z" fill="#111827"/>
-        </svg>
-      </div>
+
 
       {/* Newsletter / CTA Bar */}
       <div className="bg-gradient-to-r from-teal-600 to-teal-700 py-8">

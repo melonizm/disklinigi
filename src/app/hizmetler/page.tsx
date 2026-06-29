@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Stethoscope, Sparkles, Zap, Scissors, Smile, Baby, Eye, Pill, ArrowRight, Shield, Heart } from "lucide-react"
 import Link from "next/link"
+import Image from "@/components/ImageWithSkeleton"
 
 export default function HizmetlerPage() {
   const services = [
@@ -12,7 +13,7 @@ export default function HizmetlerPage() {
       details: ["Tek diş eksiklikleri", "Kısmi diş eksiklikleri", "Total diş eksiklikleri", "All-on-4 implant"],
       icon: Stethoscope,
       color: "from-teal-500 to-teal-600",
-      placeholder: "İmplant tedavisi görseli"
+      image: "/images/implantdistedavisi.png"
     },
     {
       slug: "zirkonyum-kaplama",
@@ -21,7 +22,7 @@ export default function HizmetlerPage() {
       details: ["Metal içermez", "Alerjik reaksiyon yapmaz", "Yüksek dayanıklılık", "Doğal görünüm"],
       icon: Sparkles,
       color: "from-amber-500 to-amber-600",
-      placeholder: "Zirkonyum kaplama görseli"
+      image: "/images/zirkonyumkaplama.jpeg"
     },
     {
       slug: "dis-beyazlatma",
@@ -30,7 +31,7 @@ export default function HizmetlerPage() {
       details: ["Ofis içi beyazlatma", "Ev tipi beyazlatma", "Kombine tedavi", "Uzun süreli etki"],
       icon: Zap,
       color: "from-sky-500 to-sky-600",
-      placeholder: "Diş beyazlatma görseli"
+      image: "/images/disbeyazlatma.png"
     },
     {
       slug: "dis-eti-tedavisi",
@@ -39,7 +40,7 @@ export default function HizmetlerPage() {
       details: ["Diş taşı temizliği", "Diş eti çekilmesi", "Diş eti grafting", "Lazer tedavi"],
       icon: Heart,
       color: "from-rose-500 to-rose-600",
-      placeholder: "Diş eti tedavisi görseli"
+      image: "/images/disetitedavisi.webp"
     },
     {
       slug: "estetik-dis-hekimligi",
@@ -48,7 +49,7 @@ export default function HizmetlerPage() {
       details: ["Gülüş tasarımı", "Laminate veneer", "Bonding", "Diş eti estetiği"],
       icon: Smile,
       color: "from-purple-500 to-purple-600",
-      placeholder: "Estetik diş hekimliği görseli"
+      image: "/images/Estetik-Dis-Hekimligi1.jpg"
     },
     {
       slug: "agiz-dis-ve-cene-cerrahisi",
@@ -57,7 +58,7 @@ export default function HizmetlerPage() {
       details: ["Gömülü diş çekimi", "Çene cerrahisi", "İmplant cerrahisi", "Kist tümör cerrahisi"],
       icon: Scissors,
       color: "from-teal-600 to-teal-700",
-      placeholder: "Çene cerrahisi görseli"
+      image: "/images/agizdiscenecerrah.png"
     },
     {
       slug: "ortodonti",
@@ -66,7 +67,7 @@ export default function HizmetlerPage() {
       details: ["Metal braket", "Şeffaf plak", "Lingual ortodonti", "Yetişkin ortodontisi"],
       icon: Shield,
       color: "from-indigo-500 to-indigo-600",
-      placeholder: "Ortodonti tedavisi görseli"
+      image: "/images/ortodonti.jpg"
     },
     {
       slug: "protezler",
@@ -75,7 +76,7 @@ export default function HizmetlerPage() {
       details: ["Hareketli protez", "Sabit protez", "Implant destekli protez", "Tam protez"],
       icon: Pill,
       color: "from-emerald-500 to-emerald-600",
-      placeholder: "Protez tedavisi görseli"
+      image: "/images/protezdis.webp"
     },
     {
       slug: "kanal-tedavisi",
@@ -84,7 +85,7 @@ export default function HizmetlerPage() {
       details: ["Tek seansta kanal", "Mikroskop destekli", "Rotary sistem", "Re-tedavi"],
       icon: Eye,
       color: "from-orange-500 to-orange-600",
-      placeholder: "Kanal tedavisi görseli"
+      image: "/images/kanaltedavisi.webp"
     },
     {
       slug: "pedodonti",
@@ -93,7 +94,7 @@ export default function HizmetlerPage() {
       details: ["Flor uygulaması", "Fissür örtücü", "Erken ortodontik müdahale", "Sedasyonlu tedavi"],
       icon: Baby,
       color: "from-pink-500 to-pink-600",
-      placeholder: "Çocuk diş tedavisi görseli"
+      image: "/images/Pedodonti.png"
     },
     {
       slug: "genel-dis-bakimi",
@@ -102,7 +103,7 @@ export default function HizmetlerPage() {
       details: ["Diş taşı temizliği", "Polishing", "Flossing", "Ağız bakımı eğitimi"],
       icon: Sparkles,
       color: "from-cyan-500 to-cyan-600",
-      placeholder: "Genel diş bakımı görseli"
+      image: "/images/geneldisbakim.webp"
     },
     {
       slug: "agiz-kokusu",
@@ -111,7 +112,7 @@ export default function HizmetlerPage() {
       details: ["Ağız kuruluğu tedavisi", "Diş eti hastalıkları", "Dil temizliği", "Beslenme düzeni"],
       icon: Zap,
       color: "from-lime-500 to-lime-600",
-      placeholder: "Ağız kokusu tedavisi görseli"
+      image: "/images/agizkokusugiderme.jpg"
     },
   ]
 
@@ -161,14 +162,12 @@ export default function HizmetlerPage() {
               <Link href={`/hizmetler/${service.slug}`} key={index} className="service-card block bg-white rounded-2xl border border-gray-100 group overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                 {/* Service image placeholder */}
                 <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <div className="w-12 h-12 mx-auto mb-2 bg-gray-300/60 rounded-xl flex items-center justify-center">
-                        <service.icon className="w-6 h-6 text-gray-400" />
-                      </div>
-                      <p className="text-xs font-medium">{service.placeholder}</p>
-                    </div>
-                  </div>
+                  <Image 
+                    src={service.image} 
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   {/* Overlay on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-0 group-hover:opacity-90 transition-opacity duration-500 flex items-center justify-center`}>
                     <service.icon className="w-12 h-12 text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500" />

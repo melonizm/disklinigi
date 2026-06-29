@@ -1,16 +1,17 @@
 import Link from "next/link"
+import Image from "@/components/ImageWithSkeleton"
 import { ArrowRight, Shield, Award, Clock, Phone, Mail, MapPin, Star, Users, Heart, Stethoscope, Smile, Baby, Sparkles, Zap, Eye, Scissors, Pill } from "lucide-react"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 
 export default function Home() {
   const services = [
-    { slug: "implant-dis-tedavisi", name: "İmplant Tedavisi", description: "Tek, kısmi veya total diş eksikliklerinde modern çözümler", icon: Stethoscope, placeholder: "İmplant tedavisi görseli" },
-    { slug: "zirkonyum-kaplama", name: "Zirkonyum Kaplama", description: "Yüksek estetik beklentileri için ideal çözüm", icon: Sparkles, placeholder: "Zirkonyum kaplama görseli" },
-    { slug: "dis-beyazlatma", name: "Diş Beyazlatma", description: "Estetik ve parlak gülüşler için profesyonel tedavi", icon: Zap, placeholder: "Diş beyazlatma görseli" },
-    { slug: "ortodonti", name: "Ortodonti", description: "Diş ve çene yapısı bozukluklarının tedavisi", icon: Smile, placeholder: "Ortodonti tedavisi görseli" },
-    { slug: "kanal-tedavisi", name: "Kanal Tedavisi", description: "Diş sinir problemlerinin modern tedavi yöntemleri", icon: Eye, placeholder: "Kanal tedavisi görseli" },
-    { slug: "pedodonti", name: "Pedodonti", description: "Çocuklar için özel ağız ve diş sağlığı hizmetleri", icon: Baby, placeholder: "Çocuk diş tedavisi görseli" },
+    { slug: "implant-dis-tedavisi", name: "İmplant Tedavisi", description: "Tek, kısmi veya total diş eksikliklerinde modern çözümler", icon: Stethoscope, image: "/images/implantdistedavisi.png" },
+    { slug: "zirkonyum-kaplama", name: "Zirkonyum Kaplama", description: "Yüksek estetik beklentileri için ideal çözüm", icon: Sparkles, image: "/images/zirkonyumkaplama.jpeg" },
+    { slug: "dis-beyazlatma", name: "Diş Beyazlatma", description: "Estetik ve parlak gülüşler için profesyonel tedavi", icon: Zap, image: "/images/disbeyazlatma.png" },
+    { slug: "ortodonti", name: "Ortodonti", description: "Diş ve çene yapısı bozukluklarının tedavisi", icon: Smile, image: "/images/ortodonti.jpg" },
+    { slug: "kanal-tedavisi", name: "Kanal Tedavisi", description: "Diş sinir problemlerinin modern tedavi yöntemleri", icon: Eye, image: "/images/kanaltedavisi.webp" },
+    { slug: "pedodonti", name: "Pedodonti", description: "Çocuklar için özel ağız ve diş sağlığı hizmetleri", icon: Baby, image: "/images/Pedodonti.png" },
   ]
 
   const features = [
@@ -115,24 +116,29 @@ export default function Home() {
             <div className="hidden lg:block animate-fade-in-right">
               <div className="relative">
                 {/* Main glass card */}
-                <div className="glass-card rounded-3xl p-8 relative z-10">
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { icon: Stethoscope, label: "İmplant", color: "from-teal-400 to-teal-600" },
-                      { icon: Sparkles, label: "Estetik", color: "from-amber-400 to-amber-600" },
-                      { icon: Smile, label: "Ortodonti", color: "from-teal-300 to-teal-500" },
-                      { icon: Heart, label: "Bakım", color: "from-rose-400 to-rose-600" },
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 text-center hover:bg-white/20 transition-all cursor-pointer group">
-                        <div className={`w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform shadow-lg`}>
-                          <item.icon className="w-7 h-7 text-white" />
-                        </div>
-                        <p className="text-white/90 font-medium text-sm">{item.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 text-center">
-                    <p className="text-teal-200 text-sm">12+ Tedavi Hizmeti</p>
+                <div className="glass-card rounded-3xl relative z-10 overflow-hidden shadow-2xl shadow-teal-900/50">
+                  <Image src="/images/dentistvemusterisimutlu.jfif" alt="Mutlu Hasta ve Diş Hekimi" fill className="object-cover opacity-30 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-teal-900/40 backdrop-blur-sm"></div>
+                  
+                  <div className="relative z-10 p-8">
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { icon: Stethoscope, label: "İmplant", slug: "implant-dis-tedavisi", color: "from-teal-400 to-teal-600" },
+                        { icon: Sparkles, label: "Estetik", slug: "estetik-dis-hekimligi", color: "from-amber-400 to-amber-600" },
+                        { icon: Smile, label: "Ortodonti", slug: "ortodonti", color: "from-teal-300 to-teal-500" },
+                        { icon: Heart, label: "Bakım", slug: "genel-dis-bakimi", color: "from-rose-400 to-rose-600" },
+                      ].map((item, i) => (
+                        <Link href={`/hizmetler/${item.slug}`} key={i} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-center hover:bg-white/30 transition-all cursor-pointer group block shadow-lg">
+                          <div className={`w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform shadow-lg`}>
+                            <item.icon className="w-7 h-7 text-white" />
+                          </div>
+                          <p className="text-white font-semibold text-sm drop-shadow-md">{item.label}</p>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="mt-6 text-center">
+                      <p className="text-white font-medium text-sm drop-shadow-md">12+ Tedavi Hizmeti</p>
+                    </div>
                   </div>
                 </div>
 
@@ -232,14 +238,12 @@ export default function Home() {
               <Link href={`/hizmetler/${service.slug}`} key={index} className="service-card block bg-white rounded-2xl border border-gray-100 group overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                 {/* Service image placeholder */}
                 <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <div className="w-12 h-12 mx-auto mb-2 bg-gray-300/60 rounded-xl flex items-center justify-center">
-                        <service.icon className="w-6 h-6 text-gray-400" />
-                      </div>
-                      <p className="text-xs font-medium">{service.placeholder}</p>
-                    </div>
-                  </div>
+                  <Image 
+                    src={service.image} 
+                    alt={service.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-teal-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
@@ -315,18 +319,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               {/* Clinic image placeholder */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10">
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 h-[500px] flex items-center justify-center">
-                  <div className="text-center text-gray-400">
-                    <div className="w-16 h-16 mx-auto mb-3 bg-gray-300 rounded-2xl flex items-center justify-center">
-                      <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
-                      </svg>
-                    </div>
-                    <p className="text-sm font-medium">Klinik Fotoğrafı</p>
-                    <p className="text-xs mt-1">Ana sayfa görseli</p>
-                  </div>
-                </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-[500px]">
+                <Image src="/images/klinikfoto1.jfif" alt="Klinik Fotoğrafı" fill className="object-cover" />
               </div>
             </div>
             <div>
