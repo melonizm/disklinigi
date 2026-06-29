@@ -107,7 +107,7 @@ export default function HakkimizdaPage() {
             <div>
               {/* Clinic image placeholder */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-96">
-                <Image src="/images/klinikbeklemeodası.jfif" alt="Klinik Bekleme Odası" fill className="object-cover" />
+                <Image src="/images/klinikbeklemeodasi.jpg" alt="Klinik Bekleme Odası" fill className="object-cover" />
               </div>
             </div>
             <div>

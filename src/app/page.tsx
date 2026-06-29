@@ -117,7 +117,7 @@ export default function Home() {
               <div className="relative">
                 {/* Main glass card */}
                 <div className="glass-card rounded-3xl relative z-10 overflow-hidden shadow-2xl shadow-teal-900/50">
-                  <Image src="/images/dentistvemusterisimutlu.jfif" alt="Mutlu Hasta ve Diş Hekimi" fill className="object-cover opacity-30 mix-blend-overlay" />
+                  <Image src="/images/dentistvemusterisimutlu.jpg" alt="Mutlu Hasta ve Diş Hekimi" fill className="object-cover opacity-30 mix-blend-overlay" />
                   <div className="absolute inset-0 bg-teal-900/40 backdrop-blur-sm"></div>
                   
                   <div className="relative z-10 p-8">
@@ -320,7 +320,7 @@ export default function Home() {
             <div>
               {/* Clinic image placeholder */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-[500px]">
-                <Image src="/images/klinikfoto1.jfif" alt="Klinik Fotoğrafı" fill className="object-cover" />
+                <Image src="/images/klinikfoto1.jpg" alt="Klinik Fotoğrafı" fill className="object-cover" />
               </div>
             </div>
             <div>
