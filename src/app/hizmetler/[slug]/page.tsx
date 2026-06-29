@@ -209,14 +209,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             
             {/* Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32 h-[500px]">
-              <Image 
-                src={imageSrc} 
-                alt={service.name}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-                className="object-cover"
-              />
+              {imageSrc && (
+                <Image 
+                  src={imageSrc} 
+                  alt={service.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  className="object-cover"
+                />
+              )}
             </div>
 
             {/* Details */}

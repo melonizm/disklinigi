@@ -19,7 +19,8 @@ const realData = {
   agizkokusu: "https://res.cloudinary.com/dr3nlusdb/image/upload/v1782738093/agizkokusugiderme_tjmzqp.jpg",
   disetitedavisi: "https://res.cloudinary.com/dr3nlusdb/image/upload/v1782738091/disetitedavisi_amahj4.webp",
   dentistvemusterisimutlu: "https://res.cloudinary.com/dr3nlusdb/image/upload/v1782738091/dentistvemusterisimutlu_cbvfx8.jpg",
-  _description: "Real Cloudinary images updated by AI"
+  _description: "Real Cloudinary images updated by AI",
+  isActive: true
 };
 
 async function clearData(collection) {
