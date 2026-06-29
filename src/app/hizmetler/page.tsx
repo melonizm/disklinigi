@@ -125,7 +125,7 @@ export default async function HizmetlerPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float-delayed" />
@@ -142,7 +142,7 @@ export default async function HizmetlerPage() {
               <Stethoscope className="w-4 h-4 mr-2" />
               12+ Tedavi Hizmeti
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
               Hizmetlerimiz
             </h1>
             <p className="text-xl text-teal-100 max-w-2xl mx-auto">
@@ -159,13 +159,13 @@ export default async function HizmetlerPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link href={`/hizmetler/${service.slug}`} key={index} className="service-card block bg-white rounded-2xl border border-gray-100 group overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
                 {/* Service image placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+                <div className="relative h-40 sm:h-48 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                   <Image 
                     src={service.image} 
                     alt={service.name}
@@ -203,7 +203,7 @@ export default async function HizmetlerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
+      <section className="relative py-12 lg:py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/20 rounded-full blur-3xl" />
         </div>

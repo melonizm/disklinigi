@@ -165,7 +165,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <Navigation />
       
       {/* Hero Section */}
-      <section className={`relative bg-gradient-to-br ${service.color} text-white py-24 overflow-hidden`}>
+      <section className={`relative bg-gradient-to-br ${service.color} text-white py-16 md:py-24 overflow-hidden`}>
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float-delayed" />
@@ -186,7 +186,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <Icon className="w-12 h-12 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-[family-name:var(--font-montserrat)]">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-[family-name:var(--font-montserrat)]">
                 {service.name}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl">
@@ -203,12 +203,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Content Section */}
-      <section className="py-20">
+      <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             
             {/* Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32 h-[500px]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 order-2 lg:order-1 sticky top-32 h-[300px] lg:h-[500px]">
               {imageSrc && (
                 <Image 
                   src={imageSrc} 

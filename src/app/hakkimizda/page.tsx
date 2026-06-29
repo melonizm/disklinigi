@@ -71,7 +71,7 @@ export default async function HakkimizdaPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float-delayed" />
@@ -88,7 +88,7 @@ export default async function HakkimizdaPage() {
               <Heart className="w-4 h-4 mr-2" />
               1985&apos;ten Beri Hizmetinizdeyiz
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
               Hakkımızda
             </h1>
             <p className="text-xl text-teal-100 max-w-2xl mx-auto">
@@ -104,12 +104,12 @@ export default async function HakkimizdaPage() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               {/* Clinic image placeholder */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-96">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-64 lg:h-96">
                 <Image src={dbImages.klinikbeklemeodasi} alt="Klinik Bekleme Odası" fill sizes="(max-width: 1024px) 100vw, 50vw" priority className="object-cover" />
               </div>
             </div>
@@ -133,7 +133,7 @@ export default async function HakkimizdaPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-teal-600 text-sm font-semibold uppercase tracking-widest mb-3">Değerlerimiz</span>
@@ -156,7 +156,7 @@ export default async function HakkimizdaPage() {
       </section>
 
       {/* Doctors Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-teal-600 text-sm font-semibold uppercase tracking-widest mb-3">Ekibimiz</span>

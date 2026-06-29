@@ -48,7 +48,7 @@ export default function HekimlerPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float-delayed" />
@@ -65,7 +65,7 @@ export default function HekimlerPage() {
               <Users className="w-4 h-4 mr-2" />
               Uzman Kadromuz
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
               Hekimlerimiz
             </h1>
             <p className="text-xl text-teal-100 max-w-2xl mx-auto">
@@ -81,13 +81,13 @@ export default function HekimlerPage() {
       </section>
 
       {/* Doctors Grid */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {doctors.map((doctor, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden group border border-gray-100 hover:border-teal-100">
                 {/* Image Placeholder */}
-                <div className="relative h-64 bg-gray-200 overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="relative h-56 lg:h-64 bg-gray-200 overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                     <div className="text-center text-gray-400">
                       <div className="w-16 h-16 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center">
@@ -140,7 +140,7 @@ export default function HekimlerPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
+      <section className="relative py-12 lg:py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/20 rounded-full blur-3xl" />
         </div>

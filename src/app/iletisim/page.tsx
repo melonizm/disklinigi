@@ -33,7 +33,7 @@ export default function IletisimPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-10 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float-delayed" />
@@ -50,7 +50,7 @@ export default function IletisimPage() {
               <MessageSquare className="w-4 h-4 mr-2" />
               Bizimle İletişime Geçin
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)]">
               İletişim
             </h1>
             <p className="text-xl text-teal-100 max-w-2xl mx-auto">
@@ -66,7 +66,7 @@ export default function IletisimPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
@@ -97,7 +97,7 @@ export default function IletisimPage() {
 
               {/* Map placeholder */}
               <div className="mt-8">
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl h-64 flex items-center justify-center">
+                <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl h-48 lg:h-64 flex items-center justify-center">
                   <div className="text-center text-gray-400">
                     <MapPin className="w-12 h-12 mx-auto mb-2" />
                     <p className="text-sm font-medium">Google Maps Entegrasyonu</p>

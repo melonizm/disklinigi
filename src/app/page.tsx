@@ -83,14 +83,14 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-32 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in-left">
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-teal-100 mb-6 border border-white/10">
                 <Sparkles className="w-4 h-4 mr-2 text-amber-400" />
                 1985&apos;ten Beri Güvenilir Sağlık Hizmeti
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-[family-name:var(--font-montserrat)] leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-6 font-[family-name:var(--font-montserrat)] leading-tight">
                 Sağlıklı Gülüşler İçin
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-200 via-white to-amber-200 mt-2">
                   Modern Çözümler
@@ -198,7 +198,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           Features Section
           ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-teal-600 text-sm font-semibold uppercase tracking-widest mb-3">Neden Biz?</span>
@@ -226,7 +226,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           Services Section
           ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-teal-600 text-sm font-semibold uppercase tracking-widest mb-3">Hizmetlerimiz</span>
@@ -279,7 +279,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           Statistics Section
           ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 relative overflow-hidden">
+      <section className="py-12 lg:py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 relative overflow-hidden">
         {/* Decorative */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 right-0 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
@@ -319,12 +319,12 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           About Preview Section
           ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div>
               {/* Clinic image placeholder */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-[500px]">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-teal-500/10 h-[300px] lg:h-[500px]">
                 <Image src={dbImages.klinikfoto1} alt="Klinik Fotoğrafı" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </div>
@@ -362,7 +362,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           Testimonials Section
           ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block text-teal-600 text-sm font-semibold uppercase tracking-widest mb-3">Hasta Yorumları</span>
@@ -408,7 +408,7 @@ export default async function Home() {
       {/* ═══════════════════════════════════════════
           CTA Section
           ═══════════════════════════════════════════ */}
-      <section className="relative py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
+      <section className="relative py-12 lg:py-20 bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/20 rounded-full blur-3xl" />
         </div>
