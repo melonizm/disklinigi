@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react"
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa"
 
-export default function Navigation() {
+export default function Navigation({ dbImages }: { dbImages?: Record<string, string> }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -33,7 +33,7 @@ export default function Navigation() {
           <div className="flex items-center space-x-6">
             <span className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Hacıhalil mah. Atatürk cd. 53/A, 41400 Gebze/Kocaeli</span>
+              <span>{dbImages?.adres || "Hacıhalil mah. Atatürk cd. 53/A, 41400 Gebze/Kocaeli"}</span>
             </span>
             <a href="tel:+902622555758" className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
               <Phone className="w-3.5 h-3.5" />
@@ -69,7 +69,11 @@ export default function Navigation() {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-gray-800 font-[family-name:var(--font-montserrat)] tracking-tight">
-                  Denta<span className="text-teal-600">Clinic</span>
+                  {dbImages?.isletmeAdi ? (
+                    <>{dbImages.isletmeAdi.substring(0, 5)}<span className="text-teal-600">{dbImages.isletmeAdi.substring(5)}</span></>
+                  ) : (
+                    <>Denta<span className="text-teal-600">Clinic</span></>
+                  )}
                 </span>
                 <span className="text-[10px] text-gray-400 -mt-1 tracking-widest uppercase">Ağız ve Diş Sağlığı</span>
               </div>

@@ -54,7 +54,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      <Navigation dbImages={dbImages} />
       
       {/* ═══════════════════════════════════════════
           Hero Section
@@ -175,7 +175,7 @@ export default async function Home() {
             {[
               { icon: Phone, label: "Telefon", value: "0262 255 57 58", href: "tel:+902622555758" },
               { icon: Mail, label: "E-posta", value: "info@dentaclinic.com", href: "mailto:info@dentaclinic.com" },
-              { icon: MapPin, label: "Adres", value: "Gebze, Kocaeli", href: undefined },
+              { icon: MapPin, label: "Adres", value: dbImages.adres || "Gebze, Kocaeli", href: undefined },
             ].map((item, i) => (
               <div key={i} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-teal-50/50 transition-colors group">
                 <div className="w-14 h-14 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl flex items-center justify-center group-hover:from-teal-100 group-hover:to-teal-200 transition-all shadow-sm">
@@ -295,7 +295,7 @@ export default async function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-[family-name:var(--font-montserrat)]">
-              Rakamlarla DentaClinic
+              Rakamlarla {dbImages.isletmeAdi || "DentaClinic"}
             </h2>
             <p className="text-teal-200 text-lg max-w-2xl mx-auto">
               Yıllardır süregelen güven ve kalite
@@ -442,7 +442,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <Footer />
+      <Footer dbImages={dbImages} />
     </div>
   )
 }

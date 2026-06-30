@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
 import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa"
 
-export default function Footer() {
+export default function Footer({ dbImages }: { dbImages?: Record<string, string> }) {
   const services = [
     { name: "İmplant Tedavisi", href: "/hizmetler" },
     { name: "Zirkonyum Kaplama", href: "/hizmetler" },
@@ -50,7 +50,11 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold font-[family-name:var(--font-montserrat)]">
-                  Denta<span className="text-teal-400">Clinic</span>
+                  {dbImages?.isletmeAdi ? (
+                    <>{dbImages.isletmeAdi.substring(0, 5)}<span className="text-teal-400">{dbImages.isletmeAdi.substring(5)}</span></>
+                  ) : (
+                    <>Denta<span className="text-teal-400">Clinic</span></>
+                  )}
                 </span>
                 <span className="text-[10px] text-gray-500 -mt-0.5 tracking-widest uppercase">Ağız ve Diş Sağlığı</span>
               </div>
@@ -140,7 +144,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-white text-sm font-medium">Adres</p>
-                  <p className="text-gray-400 text-sm">Hacıhalil mah. Atatürk cd. 53/A, Gebze/Kocaeli</p>
+                  <p className="text-gray-400 text-sm">{dbImages?.adres || "Hacıhalil mah. Atatürk cd. 53/A, Gebze/Kocaeli"}</p>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
@@ -162,7 +166,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} DentaClinic. Tüm hakları saklıdır.
+              &copy; {new Date().getFullYear()} {dbImages?.isletmeAdi || "DentaClinic"}. Tüm hakları saklıdır.
             </p>
             <div className="flex items-center space-x-6 text-sm text-gray-500">
               <Link href="/hakkimizda" className="hover:text-teal-400 transition-colors">Gizlilik Politikası</Link>
