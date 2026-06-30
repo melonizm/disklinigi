@@ -1,3 +1,5 @@
+export const revalidate = 60; // 60 saniyede bir veritabanını kontrol et (ISR)
+
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
