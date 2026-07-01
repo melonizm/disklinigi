@@ -35,13 +35,13 @@ export default function Navigation({ dbImages }: { dbImages?: Record<string, str
               <MapPin className="w-3.5 h-3.5" />
               <span>{dbImages?.adres || "Hacıhalil mah. Atatürk cd. 53/A, 41400 Gebze/Kocaeli"}</span>
             </span>
-            <a href="tel:+902622555758" className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
+            <a href={`tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}`} className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
               <Phone className="w-3.5 h-3.5" />
-              <span>+90 262 255 57 58</span>
+              <span>{dbImages?.telefon || "+90 262 255 57 58"}</span>
             </a>
-            <a href="mailto:info@dentaclinic.com" className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
+            <a href={`mailto:${dbImages?.eposta || "info@dentaclinic.com"}`} className="flex items-center space-x-2 opacity-90 hover:opacity-100 transition-opacity">
               <Mail className="w-3.5 h-3.5" />
-              <span>info@dentaclinic.com</span>
+              <span>{dbImages?.eposta || "info@dentaclinic.com"}</span>
             </a>
           </div>
           <div className="flex items-center space-x-3">
@@ -103,13 +103,13 @@ export default function Navigation({ dbImages }: { dbImages?: Record<string, str
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center space-x-4">
-              <a href="tel:+902622555758" className="flex items-center text-gray-600 hover:text-teal-600 transition-colors text-sm">
+              <a href={`tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}`} className="flex items-center text-gray-600 hover:text-teal-600 transition-colors text-sm">
                 <div className="w-9 h-9 rounded-full bg-teal-50 flex items-center justify-center mr-2 group-hover:bg-teal-100 transition-colors">
                   <Phone className="w-4 h-4 text-teal-600" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[10px] text-gray-400 leading-none">Bizi Arayın</span>
-                  <span className="font-semibold text-gray-800 text-sm">0262 255 57 58</span>
+                  <span className="font-semibold text-gray-800 text-sm">{dbImages?.telefon || "0262 255 57 58"}</span>
                 </div>
               </a>
               <Link
@@ -147,9 +147,9 @@ export default function Navigation({ dbImages }: { dbImages?: Record<string, str
               </Link>
             ))}
             <div className="pt-3 border-t mt-3 space-y-3">
-              <a href="tel:+902622555758" className="flex items-center text-teal-600 py-2 px-4">
+              <a href={`tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}`} className="flex items-center text-teal-600 py-2 px-4">
                 <Phone className="w-4 h-4 mr-3" />
-                <span className="font-medium">0262 255 57 58</span>
+                <span className="font-medium">{dbImages?.telefon || "0262 255 57 58"}</span>
               </a>
               <Link
                 href="/iletisim"

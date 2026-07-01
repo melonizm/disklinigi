@@ -122,7 +122,7 @@ export default async function HizmetlerPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      <Navigation dbImages={dbImages} />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
@@ -224,7 +224,7 @@ export default async function HizmetlerPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer dbImages={dbImages} />
     </div>
   )
 }

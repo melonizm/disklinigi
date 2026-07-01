@@ -76,8 +76,8 @@ export default function IletisimClient({ dbImages }: { dbImages?: Record<string,
               
               <div className="space-y-6">
                 {[
-                  { icon: Phone, title: "Telefon", lines: ["0262 255 57 58", "+90 532 767 79 29"] },
-                  { icon: Mail, title: "E-posta", lines: ["info@dentaclinic.com"] },
+                  { icon: Phone, title: "Telefon", lines: [dbImages?.telefon || "0262 255 57 58"] },
+                  { icon: Mail, title: "E-posta", lines: [dbImages?.eposta || "info@dentaclinic.com"] },
                   { icon: MapPin, title: "Adres", lines: [dbImages?.adres || "Hacıhalil mah. Atatürk cd. 53/A", "Gebze/Kocaeli"] },
                   { icon: Clock, title: "Çalışma Saatleri", lines: ["Pazartesi - Cuma: 09:00 - 18:00", "Cumartesi: 09:00 - 14:00", "Pazar: Kapalı"] },
                 ].map((item, i) => (

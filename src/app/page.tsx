@@ -173,8 +173,8 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Phone, label: "Telefon", value: "0262 255 57 58", href: "tel:+902622555758" },
-              { icon: Mail, label: "E-posta", value: "info@dentaclinic.com", href: "mailto:info@dentaclinic.com" },
+              { icon: Phone, label: "Telefon", value: dbImages?.telefon || "0262 255 57 58", href: `tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}` },
+              { icon: Mail, label: "E-posta", value: dbImages?.eposta || "info@dentaclinic.com", href: `mailto:${dbImages?.eposta || "info@dentaclinic.com"}` },
               { icon: MapPin, label: "Adres", value: dbImages.adres || "Gebze, Kocaeli", href: undefined },
             ].map((item, i) => (
               <div key={i} className="flex items-center space-x-4 p-4 rounded-xl hover:bg-teal-50/50 transition-colors group">
@@ -415,7 +415,7 @@ export default async function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-teal-100 mb-6 border border-white/10">
             <Phone className="w-4 h-4 mr-2" />
-            +90 262 255 57 58
+            {dbImages?.telefon || "+90 262 255 57 58"}
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-[family-name:var(--font-montserrat)]">
             Hemen Randevu Alın
@@ -432,7 +432,7 @@ export default async function Home() {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
             <a
-              href="tel:+902622555758"
+              href={`tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}`}
               className="inline-flex items-center justify-center px-10 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/20 transition-all text-lg"
             >
               <Phone className="mr-2 w-5 h-5" />

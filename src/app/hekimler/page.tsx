@@ -2,8 +2,10 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Users, ArrowRight, Phone, Mail } from "lucide-react"
 import Link from "next/link"
+import { getImages } from "@/lib/getImages"
 
-export default function HekimlerPage() {
+export default async function HekimlerPage() {
+  const dbImages = await getImages();
   const doctors = [
     {
       name: "Dt. Enis ARDALI",
@@ -45,7 +47,7 @@ export default function HekimlerPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navigation />
+      <Navigation dbImages={dbImages} />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-teal-700 via-teal-600 to-teal-800 text-white py-16 md:py-24 overflow-hidden">
@@ -161,7 +163,7 @@ export default function HekimlerPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer dbImages={dbImages} />
     </div>
   )
 }

@@ -126,7 +126,7 @@ export default function Footer({ dbImages }: { dbImages?: Record<string, string>
                 </div>
                 <div>
                   <p className="text-white text-sm font-medium">Telefon</p>
-                  <a href="tel:+902622555758" className="text-gray-400 text-sm hover:text-teal-400 transition-colors">0262 255 57 58</a>
+                  <a href={`tel:${dbImages?.telefon?.replace(/\s+/g, '') || "+902622555758"}`} className="text-gray-400 text-sm hover:text-teal-400 transition-colors">{dbImages?.telefon || "0262 255 57 58"}</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
@@ -135,7 +135,7 @@ export default function Footer({ dbImages }: { dbImages?: Record<string, string>
                 </div>
                 <div>
                   <p className="text-white text-sm font-medium">E-posta</p>
-                  <a href="mailto:info@dentaclinic.com" className="text-gray-400 text-sm hover:text-teal-400 transition-colors">info@dentaclinic.com</a>
+                  <a href={`mailto:${dbImages?.eposta || "info@dentaclinic.com"}`} className="text-gray-400 text-sm hover:text-teal-400 transition-colors">{dbImages?.eposta || "info@dentaclinic.com"}</a>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
