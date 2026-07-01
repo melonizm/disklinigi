@@ -64,9 +64,17 @@ export default function Navigation({ dbImages }: { dbImages?: Record<string, str
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-11 h-11 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/30 group-hover:shadow-teal-500/50 transition-shadow">
-                <span className="text-white font-bold text-xl">D</span>
-              </div>
+              {dbImages?.favicon ? (
+                <img 
+                  src={dbImages.favicon} 
+                  alt="Logo" 
+                  className="w-12 h-12 rounded-xl shadow-lg shadow-teal-500/30 group-hover:shadow-teal-500/50 transition-shadow object-cover bg-white p-0.5" 
+                />
+              ) : (
+                <div className="w-11 h-11 bg-gradient-to-br from-teal-500 to-teal-700 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/30 group-hover:shadow-teal-500/50 transition-shadow">
+                  <span className="text-white font-bold text-xl">D</span>
+                </div>
+              )}
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-gray-800 font-[family-name:var(--font-montserrat)] tracking-tight">
                   {dbImages?.isletmeAdi ? (
